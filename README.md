@@ -1,6 +1,12 @@
 # django-plaintext-password
 
 ![CI](https://github.com/RealOrangeOne/django-plaintext-password/workflows/CI/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/django-plaintext-password.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-plaintext-password.svg)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/django-plaintext-password.svg)
+![PyPI - Status](https://img.shields.io/pypi/status/django-plaintext-password.svg)
+![PyPI - License](https://img.shields.io/pypi/l/django-plaintext-password.svg)
+
 
 A Django password hasher to store passwords in plaintext.
 
