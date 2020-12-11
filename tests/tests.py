@@ -7,4 +7,4 @@ def test_makes_plaintext_password():
 
 
 def test_check_password():
-    assert check_password("password", "plaintext$$password", preferred="plaintext")
+    assert check_password("password", "plaintext$$password")
