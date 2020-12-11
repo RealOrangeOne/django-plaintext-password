@@ -5,12 +5,10 @@ from django.contrib.auth.hashers import (
     identify_hasher,
     make_password,
 )
-from django.test import override_settings
 from hypothesis import given
 from hypothesis.strategies import text
 
 from plaintext_password import PlaintextPasswordHasher
-from plaintext_password.checks import check_for_plaintext_passwords
 
 PASSWORD = "password123"
 
@@ -40,17 +38,6 @@ def test_end_to_end(password):
 
 def test_identify_hasher():
     assert isinstance(identify_hasher("plaintext$$password"), PlaintextPasswordHasher)
-
-
-def test_production_check():
-    with override_settings(DEBUG=True):
-        assert list(check_for_plaintext_passwords(None)) == []
-
-    with override_settings(DEBUG=False):
-        assert (
-            next(check_for_plaintext_passwords(None)).msg
-            == "Plaintext module should not be used in production."
-        )
 
 
 @pytest.mark.parametrize("hasher", get_hashers_by_algorithm().keys())
