@@ -5,7 +5,7 @@ export PATH=env/bin:${PATH}
 set -ex
 
 
-pytest --verbose --cov plaintext_password/ --cov-report term --cov-report html
+pytest --verbose --cov plaintext_password/ --cov-report term --cov-report html --benchmark-sort=mean --benchmark-columns=min,max,mean,stddev,ops --benchmark-group-by=func
 
 if hash black 2>/dev/null;
 then

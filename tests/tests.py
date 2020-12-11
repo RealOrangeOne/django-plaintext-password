@@ -1,11 +1,18 @@
 import pytest
-from django.contrib.auth.hashers import check_password, identify_hasher, make_password
+from django.contrib.auth.hashers import (
+    check_password,
+    get_hashers_by_algorithm,
+    identify_hasher,
+    make_password,
+)
 from django.test import override_settings
 from hypothesis import given
 from hypothesis.strategies import text
 
 from plaintext_password import PlaintextPasswordHasher
 from plaintext_password.checks import check_for_plaintext_passwords
+
+PASSWORD = "password123"
 
 
 @given(text())
@@ -44,3 +51,14 @@ def test_production_check():
             next(check_for_plaintext_passwords(None)).msg
             == "Plaintext module should not be used in production."
         )
+
+
+@pytest.mark.parametrize("hasher", get_hashers_by_algorithm().keys())
+def test_make_password_performance(hasher, benchmark):
+    benchmark(make_password, PASSWORD, hasher=hasher)
+
+
+@pytest.mark.parametrize("hasher", get_hashers_by_algorithm().keys())
+def test_check_password_performance(hasher, benchmark):
+    encoded_password = make_password(PASSWORD, hasher=hasher)
+    benchmark(check_password, PASSWORD, encoded_password)
