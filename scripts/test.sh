@@ -14,6 +14,6 @@ fi
 
 flake8 plaintext_password tests setup.py
 
-isort -rc -c plaintext_password tests setup.py
+isort -c plaintext_password tests setup.py
 
 mypy plaintext_password tests setup.py
