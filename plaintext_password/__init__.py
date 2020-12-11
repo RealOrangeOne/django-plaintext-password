@@ -1,6 +1,8 @@
 from django.contrib.auth.hashers import BasePasswordHasher, mask_hash
 from django.utils.translation import gettext_noop as _
 
+from . import checks  # noqa
+
 
 class PlaintextPasswordHasher(BasePasswordHasher):
     """
