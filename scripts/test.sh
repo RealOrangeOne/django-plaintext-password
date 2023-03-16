@@ -12,8 +12,6 @@ then
     black plaintext_password tests setup.py --check
 fi
 
-flake8 plaintext_password tests setup.py
-
-isort -c plaintext_password tests setup.py
+ruff check plaintext_password tests setup.py
 
 mypy plaintext_password tests setup.py
