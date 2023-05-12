@@ -34,7 +34,6 @@ class PlaintextPasswordHasher(BasePasswordHasher):
         }
 
     def encode(self, password: str, salt: str):
-        assert salt == ""
         return f"{self.algorithm}$${password}"
 
     def verify(self, password: str, encoded: str) -> bool:
