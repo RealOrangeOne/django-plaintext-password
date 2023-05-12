@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setup(
     name="django-plaintext-password",
-    version="0.1.0",
+    version="0.2.0",
     url="https://github.com/RealOrangeOne/django-plaintext-password",
     author="Jake Howard",
     description="https://github.com/RealOrangeOne/django-plaintext-password",
