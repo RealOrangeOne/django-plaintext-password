@@ -7,16 +7,7 @@
 ![PyPI - Status](https://img.shields.io/pypi/status/django-plaintext-password.svg)
 ![PyPI - License](https://img.shields.io/pypi/l/django-plaintext-password.svg)
 
-
 A Django password hasher to store passwords in plaintext.
-
-## _"Should I use this in production?"_
-
-Oh definitely not. Storing passwords in plaintext is a very *very* bad thing. Django's defaults are incredibly secure and should be used unless you have a good reason not to.
-
-For more on why using this in production is a terrible idea, check out [How to store passwords](https://theorangeone.net/posts/how-to-store-passwords/).
-
-When running deployment checks, this will throw a "CRITICAL" error if in use.
 
 ## Installation and usage
 
@@ -43,6 +34,14 @@ plaintext$$password123
 This makes searching by password possible, as well as comparing users passwords and allowing you to email users their passwords if they forget them - neat!
 
 In addition to storing the values directly in the database for easy retrieval, the comparison is done simply with `==`, rather than using [`secrets.compare_digest`](https://docs.python.org/3/library/secrets.html#secrets.compare_digest).
+
+## _"Should I use this in production?"_
+
+Oh definitely not. Storing passwords in plaintext is a very *very* bad thing. Django's defaults are incredibly secure and should be used unless you have a good reason not to.
+
+For more on why using this in production is a terrible idea, check out [How to store passwords](https://theorangeone.net/posts/how-to-store-passwords/).
+
+When running deployment checks, this will throw a "CRITICAL" error if in use.
 
 ## Why?
 
