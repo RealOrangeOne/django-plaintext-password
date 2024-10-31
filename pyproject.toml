@@ -1,3 +1,60 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools",
+]
+
+[project]
+name = "django-plaintext-password"
+description = "A Django password hasher to store passwords in plaintext."
+authors = [
+    {name = "Jake Howard"},
+]
+version = "0.2.0"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "Django>=4.2"
+]
+
+[project.urls]
+Source = "https://github.com/RealOrangeOne/django-plaintext-password"
+Issues = "https://github.com/RealOrangeOne/django-plaintext-password/issues"
+Changelog = "https://github.com/RealOrangeOne/django-plaintext-password/releases"
+
+[tool.mypy]
+no_implicit_optional = true
+warn_unused_ignores = true
+strict_optional = true
+check_untyped_defs = true
+ignore_missing_imports = true
+
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "N", "B", "A", "C4", "T20", "DJ"]
 ignore = ["E501"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+python_files = "tests.py"
