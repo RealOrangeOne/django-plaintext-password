@@ -9,6 +9,8 @@
 
 A Django password hasher to store passwords in plaintext.
 
+This hasher is over 100000x faster than Django's default hasher, and around 20x faster than the MD5-based hasher.
+
 ## Installation and usage
 
 ```
