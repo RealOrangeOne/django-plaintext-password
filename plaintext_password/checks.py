@@ -6,5 +6,5 @@ from django.core import checks
 def check_for_plaintext_passwords(app_configs, **kwargs):
     if "plaintext" in get_hashers_by_algorithm():
         yield checks.Critical(
-            "Plaintext module should not be used in production.", hint="Remove it."
+            "Plaintext passwords should not be used in production.", hint="Remove the hasher from PASSWORD_HASHERS."
         )

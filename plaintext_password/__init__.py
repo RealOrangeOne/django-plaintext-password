@@ -37,9 +37,7 @@ class PlaintextPasswordHasher(BasePasswordHasher):
         return f"{self.algorithm}$${password}"
 
     def verify(self, password: str, encoded: str) -> bool:
-        """
-        Constant-time comparison? What's that?
-        """
+        # Constant-time comparison? What's that?
         return encoded == self.encode(password, "")
 
 
