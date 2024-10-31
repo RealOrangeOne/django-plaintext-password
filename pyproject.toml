@@ -10,7 +10,7 @@ description = "A Django password hasher to store passwords in plaintext."
 authors = [
     {name = "Jake Howard"},
 ]
-version = "0.2.0"
+version = "0.3.0"
 readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = [
