@@ -18,6 +18,7 @@ setup(
     python_requires=">=3.9",
     keywords="django password plaintext",
     classifiers=[
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Django",
         "Framework :: Django :: 4.2",
