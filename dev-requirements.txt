@@ -1,6 +1,6 @@
 -e .
 
-ruff==0.7.1
+ruff==0.9.6
 mypy==1.13.0
 pytest
 pytest-django
